@@ -23,26 +23,30 @@ public class CalcApp {
 				System.out.println( ">> 알 수 없는 식입니다.");
 				continue;
 			}
+			int left, right;
+			left=Integer.parseInt(tokens[0]);
+			right=Integer.parseInt(tokens[2]);
+			
 
 			switch(tokens[1].toString()) {
 			case "+" : 
 				Add add=new Add();
-				add.setValue(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[2]));
+				add.setValue(left, right);
 				System.out.println(">> "+add.calculate()); 
 				break;
 			case "-" : 
 				Sub sub=new Sub();
-				sub.setValue(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[2]));
+				sub.setValue(left, right);
 				System.out.println(">> "+sub.calculate());
 				break;
 			case "*" :
 				Mul mul=new Mul();
-				mul.setValue(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[2]));
+				mul.setValue(left, right);
 				System.out.println(">> "+mul.calculate());
 				break;
 			case "/" :
 				Div div=new Div();
-				div.setValue(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[2]));
+				div.setValue(left, right);
 				System.out.println(">> "+div.calculate());
 				break;
 			case "default" : 
